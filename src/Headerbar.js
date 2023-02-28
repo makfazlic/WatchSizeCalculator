@@ -16,6 +16,8 @@ import {
 import { ChevronDownIcon } from '@heroicons/react/solid'
 import { analytics } from './firebase';
 import { logEvent } from "firebase/analytics";
+import { getDatabase, ref, push } from "firebase/database";
+
 
 
 
@@ -144,13 +146,27 @@ export default function HeaderBar() {
               }).then((result) => {
                 if (result.value) {
                   // send the result.value by email 
-                  emailjs.send('service_taxedjj', 'temp2', { email: result.value }, 'API_KEY')
                   logEvent(analytics, 'email_subscription', { email: result.value })
-                  Swal.fire(
-                    'Thank you!',
-                    'We will email you soon!',
-                    'success'
-                  )
+                  console.log("Sign in request",result.value)
+                  const db = getDatabase();
+                  const emailRef = ref(db, 'emails');
+                  push(emailRef, {
+                    email: result.value
+                  }).then(() => {
+                    console.log("Email added to database")
+                    Swal.fire(
+                      'Thank you!',
+                      'We will email you soon!',
+                      'success'
+                    )
+                  }).catch((error) => {
+                    console.log("Error adding email to database", error)
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: 'Something went wrong!',
+                    })
+                  })
                 } else {
                   Swal.fire({
                     icon: 'error',
@@ -173,14 +189,27 @@ export default function HeaderBar() {
               }).then((result) => {
                 if (result.value) {
                   // send the result.value by email 
-                  emailjs.send('service_taxedjj', 'temp2', { email: result.value }, 'API_KEY')
                   logEvent(analytics, 'email_subscription', { email: result.value })
-
-                  Swal.fire(
-                    'Thank you!',
-                    'We will email you soon!',
-                    'success'
-                  )
+                  console.log("Sign in request",result.value)
+                  const db = getDatabase();
+                  const emailRef = ref(db, 'emails');
+                  push(emailRef, {
+                    email: result.value
+                  }).then(() => {
+                    console.log("Email added to database")
+                    Swal.fire(
+                      'Thank you!',
+                      'We will email you soon!',
+                      'success'
+                    )
+                  }).catch((error) => {
+                    console.log("Error adding email to database", error)
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: 'Something went wrong!',
+                    })
+                  })
                 } else {
                   Swal.fire({
                     icon: 'error',

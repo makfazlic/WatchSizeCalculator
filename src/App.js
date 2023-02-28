@@ -31,6 +31,7 @@ import { Link, animateScroll as scroll } from 'react-scroll'
 
 import ContactUs from './contactForm'
 import HeaderBar from './Headerbar.js'
+import FeedbackBlock from './feedback'
 
 
 
@@ -501,6 +502,7 @@ function FormArea() {
                                         <p className = "text-justify mt-12 text-md sm:text-xl" >
                                         The distance between the top and the bottom of the watch (including the bars where the strap is attached) is a metric you can not and should not buy a watch without. Too long lug-to-lug can make your watch overhang from the top of your wrist seeming disproportionate, and as we all know only Ben10 can pull that off. Smaller lug-to-lug is truly not that bad if the diameter is correct. In any case, we suggest you read the watch specifications carefully and stay within the proposed range. </p>
                                         </div>
+                                        <FeedbackBlock />
                                         <Link to = "calc"
                                         smooth = { true }
                                         duration = { 1000 }
@@ -512,7 +514,7 @@ function FormArea() {
                                                 setLoading(false);
                                             }
                                         }
-                                        className = " mt-20 px-4 py-2 bg-blueish rounded hover:bg-blueish_dark text-grayish text-xl" > Re - calculate </button></Link >
+                                        className = " mt-20 px-4 py-2 bg-blueish rounded hover:bg-blueish_dark text-grayish text-xl" > Re-calculate </button></Link >
                                         </div> </div >
 
                                         </section>) 
