@@ -637,7 +637,7 @@ function FormArea() {
                         IMPORTANT </h1> <div className = "my-20 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl" >
                         <div className = "md:flex" >
                         <div className = "md:flex-shrink-0" >
-                        <img className = "h-48 w-full object-cover md:w-48"
+                        <img className = "h-full w-full object-cover md:w-48"
                         src = { gears }
                         alt = "Watch gears" />
                         </div> 
@@ -654,7 +654,7 @@ function FormArea() {
                         <div className = "my-20 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl" >
                         <div className = "md:flex" >
                         <div className = "md:flex-shrink-0" >
-                        <img className = "h-48 w-full object-cover md:w-48"
+                        <img className = "h-full w-full object-cover md:w-48"
                         src = { splash }
                         alt = "Water dropplet" />
                         </div> 
@@ -671,7 +671,7 @@ function FormArea() {
                         <div className = "my-20 max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl" >
                         <div className = "md:flex" >
                         <div className = "md:flex-shrink-0" >
-                        <img className = "h-48 w-full object-cover md:w-48"
+                        <img className = "h-full w-full object-cover md:w-48"
                         src = { magnet }
                         alt = "Magnetic field" />
                         </div> 
