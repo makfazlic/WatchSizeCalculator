@@ -137,93 +137,11 @@ export default function HeaderBar() {
             </Popover>
           </Popover.Group>
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            <Link onClick={() => {
-              Swal.fire({
-                title: "Coming soon!",
-                text: "Send us your email to get on our list",
-                input: 'text',
-                showCancelButton: true
-              }).then((result) => {
-                if (result.value) {
-                  // send the result.value by email 
-                  logEvent(analytics, 'email_subscription', { email: result.value })
-                  console.log("Sign in request",result.value)
-                  const db = getDatabase();
-                  const emailRef = ref(db, 'emails');
-                  push(emailRef, {
-                    email: result.value
-                  }).then(() => {
-                    console.log("Email added to database")
-                    Swal.fire(
-                      'Thank you!',
-                      'We will email you soon!',
-                      'success'
-                    )
-                  }).catch((error) => {
-                    console.log("Error adding email to database", error)
-                    Swal.fire({
-                      icon: 'error',
-                      title: 'Oops...',
-                      text: 'Something went wrong!',
-                    })
-                  })
-                } else {
-                  Swal.fire({
-                    icon: 'error',
-                    title: 'See you next time.',
-                    text: 'We would love you to join!',
-                  })
-                }
+          <Link to="contact" smooth={true} duration={1000}
 
-              })
-            }
-            } className="whitespace-nowrap cursor-pointer text-base font-medium text-darkish hover:text-darkish">
-              Sign in
-            </Link>
-            <Link onClick={() => {
-              Swal.fire({
-                title: "Coming soon!",
-                text: "Send us your email to get on our list",
-                input: 'text',
-                showCancelButton: true
-              }).then((result) => {
-                if (result.value) {
-                  // send the result.value by email 
-                  logEvent(analytics, 'email_subscription', { email: result.value })
-                  console.log("Sign in request",result.value)
-                  const db = getDatabase();
-                  const emailRef = ref(db, 'emails');
-                  push(emailRef, {
-                    email: result.value
-                  }).then(() => {
-                    console.log("Email added to database")
-                    Swal.fire(
-                      'Thank you!',
-                      'We will email you soon!',
-                      'success'
-                    )
-                  }).catch((error) => {
-                    console.log("Error adding email to database", error)
-                    Swal.fire({
-                      icon: 'error',
-                      title: 'Oops...',
-                      text: 'Something went wrong!',
-                    })
-                  })
-                } else {
-                  Swal.fire({
-                    icon: 'error',
-                    title: 'See you next time.',
-                    text: 'We would love you to join!',
-                  })
-                }
-
-              })
-            }
-            }
               className="ml-8 whitespace-nowrap cursor-pointer inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-blueish hover:bg-blueish_dark"
             >
-              Sign up
+              Contact
             </Link>
           </div>
         </div>
